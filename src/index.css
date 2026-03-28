@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Kita bisa menambahkan warna korporat di sini nanti */
+@theme {
+  --color-primary: #1E3A8A;
+  --color-secondary: #F59E0B;
+}
