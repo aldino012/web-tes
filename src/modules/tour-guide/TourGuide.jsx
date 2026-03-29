@@ -106,7 +106,7 @@ export default function TourGuide() {
               <div className="absolute -top-6 -left-6 w-24 h-24 border-t-8 border-l-8 border-amber-500 z-0"></div>
               <div className="absolute -bottom-6 -right-6 w-24 h-24 border-b-8 border-r-8 border-amber-500 z-0"></div>
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80"
+                src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 className="rounded-2xl shadow-2xl relative z-10 object-cover h-[500px] w-full"
                 alt="Team working and discussing"
               />

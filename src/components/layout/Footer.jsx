@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-// Kita gunakan icon yang namanya paling stabil dan pasti ada di semua versi
-import * as LucideIcons from "lucide-react";
+// Menggunakan react-icons yang membungkus FontAwesome (Fa)
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaWhatsapp,
+  FaEnvelope,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
-  // Fungsi pembantu untuk memanggil icon dengan aman agar tidak crash
-  const Icon = ({ name, ...props }) => {
-    const LucideIcon = LucideIcons[name] || LucideIcons.HelpCircle;
-    return <LucideIcon {...props} />;
-  };
 
   return (
     <footer className="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
@@ -20,37 +20,15 @@ export default function Footer() {
             <Link to="/" className="inline-block mb-4">
               <img
                 src="/logo.png"
-                alt="Logo"
-                className="h-12 w-auto object-contain bg-white rounded-md p-1"
+                alt="Logo EggToSucces"
+                className="h-14 w-auto object-contain bg-white rounded-md p-1.5"
               />
             </Link>
-            <p className="text-sm leading-relaxed text-slate-400">
+            <p className="text-sm leading-relaxed text-slate-400 pr-4">
               Menjadi jembatan utama yang mengintegrasikan pembangunan
-              infrastruktur dan perdagangan global di Indonesia.
+              infrastruktur dan perdagangan global di Indonesia dengan standar
+              profesional tinggi.
             </p>
-
-            {/* Social Media - Menggunakan pemanggilan Aman agar tidak crash */}
-            <div className="flex space-x-4 pt-2">
-              <a
-                href="#"
-                className="p-2 bg-slate-800 rounded-full hover:bg-blue-600 transition-all"
-              >
-                <Icon name="Linkedin" className="h-5 w-5 text-white" />
-              </a>
-              <a
-                href="#"
-                className="p-2 bg-slate-800 rounded-full hover:bg-pink-600 transition-all"
-              >
-                {/* Kita panggil Camera jika Instagram bermasalah di library Anda */}
-                <Icon name="Camera" className="h-5 w-5 text-white" />
-              </a>
-              <a
-                href="https://wa.me/6281123456789"
-                className="p-2 bg-slate-800 rounded-full hover:bg-green-600 transition-all"
-              >
-                <Icon name="MessageCircle" className="h-5 w-5 text-white" />
-              </a>
-            </div>
           </div>
 
           {/* Kolom 2: Tautan Cepat */}
@@ -100,31 +78,76 @@ export default function Footer() {
                   Ekspor Impor
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/tour-guide"
+                  className="hover:text-white transition-colors"
+                >
+                  Business Trip
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Kolom 4: Kontak */}
+          {/* Kolom 4: Kontak & Social Media */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-6">
               Kontak Kami
             </h3>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-4 text-sm mb-8">
+              {/* Ikon Telepon diubah jadi WhatsApp dan dibuat bisa diklik */}
               <li className="flex items-center space-x-3">
-                <Icon name="Phone" className="h-5 w-5 text-blue-500" />
-                <span>+62 811-2345-6789</span>
+                <FaWhatsapp className="h-5 w-5 text-blue-500" />
+                <a
+                  href="https://wa.me/6285708216255"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  +62 857-0821-6255
+                </a>
               </li>
               <li className="flex items-center space-x-3">
-                <Icon name="Mail" className="h-5 w-5 text-blue-500" />
-                <span>info@eggtosucces.com</span>
+                <FaEnvelope className="h-4 w-4 text-blue-500" />
+                <a
+                  href="mailto:eggto.team@gmail.com"
+                  className="hover:text-white transition-colors"
+                >
+                  eggto.team@gmail.com
+                </a>
               </li>
               <li className="flex items-start space-x-3">
-                <Icon name="MapPin" className="h-5 w-5 text-blue-500" />
-                <span>Jakarta, Indonesia</span>
+                <FaMapMarkerAlt className="h-4 w-4 text-blue-500 mt-1" />
+                <span>Banyuwangi, Indonesia</span>
               </li>
             </ul>
+
+            {/* Social Media Section (WhatsApp dihapus dari sini) */}
+            <div>
+              <p className="text-slate-400 text-xs font-bold uppercase tracking-wider mb-3">
+                Ikuti Kami
+              </p>
+              <div className="flex space-x-4">
+                <a
+                  href="#"
+                  className="p-2.5 bg-slate-800 rounded-full hover:bg-blue-600 transition-all hover:-translate-y-1"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin className="h-4 w-4 text-white" />
+                </a>
+                <a
+                  href="https://www.instagram.com/eggto.team?igsh=MWt0OWwyZzFvOG45dA=="
+                  className="p-2.5 bg-slate-800 rounded-full hover:bg-pink-600 transition-all hover:-translate-y-1"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram className="h-4 w-4 text-white" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
+        {/* Copyright */}
         <div className="pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
           <p>&copy; {currentYear} EggToSucces. Hak Cipta Dilindungi.</p>
         </div>

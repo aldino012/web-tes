@@ -21,7 +21,7 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Nomor WhatsApp tujuan (Pastikan mengganti dengan nomor yang benar)
-  const whatsappNumber = "6281123456789";
+  const whatsappNumber = "6285708216255";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -124,7 +124,7 @@ export default function Contact() {
                     <div>
                       <h4 className="text-lg font-bold mb-1">Telepon & WA</h4>
                       <p className="text-slate-300 text-sm mb-2">
-                        +62 811-2345-6789
+                        +62 857-0821-6255
                       </p>
                       <a
                         href={`https://wa.me/${whatsappNumber}`}
@@ -145,7 +145,7 @@ export default function Contact() {
                     <div>
                       <h4 className="text-lg font-bold mb-1">Email</h4>
                       <p className="text-slate-300 text-sm">
-                        info@eggtosucces.com
+                        eggto.team@gmail.com
                       </p>
                     </div>
                   </div>

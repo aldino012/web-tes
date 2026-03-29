@@ -67,7 +67,6 @@ export default function Home() {
       </section>
 
       {/* ----- CORE SERVICES SECTION ----- */}
-      {/* Menggunakan bg-slate-50 dengan Dot Grid Pattern */}
       <section className="py-24 relative bg-slate-50 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px]">
         {/* Hiasan Sudut Section */}
         <div className="absolute top-0 right-0 w-32 h-32 border-t-8 border-r-8 border-white rounded-bl-3xl z-0 opacity-50"></div>
@@ -87,23 +86,26 @@ export default function Home() {
             </p>
           </div>
 
+          {/* Grid Container */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Service 1 */}
-            <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group">
+            {/* Ditambahkan flex flex-col h-full agar tombol di bawah sejajar */}
+            <div className="flex flex-col h-full group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-16 h-16 bg-blue-50 rounded-bl-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
-              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-blue-200">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-blue-200 flex-shrink-0">
                 <Building2 className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold text-slate-900 mb-3 relative z-10">
                 Construction & Infrastructure
               </h4>
-              <p className="text-slate-600 mb-6 leading-relaxed relative z-10">
+              <p className="text-slate-600 mb-8 leading-relaxed relative z-10">
                 Mitra strategis dalam manajemen proyek dan penyediaan material.
                 Kami menghubungkan Anda dengan kontraktor dan vendor terbaik.
               </p>
+              {/* mt-auto memastikan tombol selalu terdorong ke bawah */}
               <Link
                 to="/infrastructure"
-                className="inline-flex items-center text-blue-600 font-bold hover:text-blue-800 relative z-10"
+                className="mt-auto inline-flex items-center w-max text-blue-600 font-bold hover:text-blue-800 relative z-10"
               >
                 Lihat Detail{" "}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -111,21 +113,22 @@ export default function Home() {
             </div>
 
             {/* Service 2 */}
-            <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group">
+            <div className="flex flex-col h-full group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-16 h-16 bg-teal-50 rounded-bl-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
-              <div className="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-teal-200">
+              <div className="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-teal-200 flex-shrink-0">
                 <Truck className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold text-slate-900 mb-3 relative z-10">
                 Global Trade Facilitator
               </h4>
-              <p className="text-slate-600 mb-6 leading-relaxed relative z-10">
+              <p className="text-slate-600 mb-8 leading-relaxed relative z-10">
                 Menjembatani produk lokal ke pasar global. Kami memastikan
-                manajemen logistik dan kepabeanan berjalan tanpa hambatan.
+                manajemen logistik dan kepabeanan berjalan tanpa hambatan
+                birokrasi yang merugikan waktu Anda.
               </p>
               <Link
                 to="/export-import"
-                className="inline-flex items-center text-teal-600 font-bold hover:text-teal-800 relative z-10"
+                className="mt-auto inline-flex items-center w-max text-teal-600 font-bold hover:text-teal-800 relative z-10"
               >
                 Lihat Detail{" "}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -133,21 +136,21 @@ export default function Home() {
             </div>
 
             {/* Service 3 */}
-            <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group">
+            <div className="flex flex-col h-full group bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-16 h-16 bg-amber-50 rounded-bl-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
-              <div className="w-16 h-16 bg-amber-500 rounded-2xl flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-amber-200">
+              <div className="w-16 h-16 bg-amber-500 rounded-2xl flex items-center justify-center mb-6 relative z-10 shadow-lg shadow-amber-200 flex-shrink-0">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-xl font-bold text-slate-900 mb-3 relative z-10">
                 Business Hospitality
               </h4>
-              <p className="text-slate-600 mb-6 leading-relaxed relative z-10">
+              <p className="text-slate-600 mb-8 leading-relaxed relative z-10">
                 Layanan pendampingan eksklusif bagi investor atau klien yang
-                ingin meninjau lokasi proyek langsung di lapangan.
+                ingin meninjau lokasi proyek langsung di lapangan dengan aman.
               </p>
               <Link
                 to="/tour-guide"
-                className="inline-flex items-center text-amber-600 font-bold hover:text-amber-800 relative z-10"
+                className="mt-auto inline-flex items-center w-max text-amber-600 font-bold hover:text-amber-800 relative z-10"
               >
                 Lihat Detail{" "}
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -159,7 +162,6 @@ export default function Home() {
 
       {/* ----- WHY CHOOSE US SECTION ----- */}
       <section className="py-24 bg-white relative">
-        {/* Hiasan Sudut Section */}
         <div className="absolute top-10 left-0 w-16 h-32 bg-blue-50 rounded-r-full z-0"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -224,7 +226,6 @@ export default function Home() {
             </div>
 
             <div className="lg:w-1/2 relative">
-              {/* Gambar dengan Corner Frame */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
                 <div className="absolute top-0 right-0 w-20 h-20 border-t-8 border-r-8 border-blue-600 z-20"></div>
                 <div className="absolute bottom-0 left-0 w-20 h-20 border-b-8 border-l-8 border-blue-600 z-20"></div>
@@ -236,7 +237,6 @@ export default function Home() {
                 <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply z-10"></div>
               </div>
 
-              {/* Floating Badge */}
               <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 hidden md:block z-30">
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center">
@@ -260,7 +260,6 @@ export default function Home() {
       {/* ----- CTA SECTION ----- */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl">
-          {/* Hiasan Dekoratif di CTA */}
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-600 rounded-full blur-3xl opacity-50 z-0"></div>
           <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-teal-500 rounded-full blur-3xl opacity-30 z-0"></div>
 
